@@ -7,9 +7,9 @@ import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 import java.util.stream.Stream;
 
-public final class VoidParent implements Parent<Child<VoidParent>,VoidParent> {
+public final class VoidParent implements Parent<Child<VoidParent>, VoidParent> {
 
-    private VoidParent(){
+    private VoidParent() {
         throw new IllegalStateException();
     }
 

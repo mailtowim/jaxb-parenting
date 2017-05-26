@@ -3,8 +3,8 @@ package org.speedy.parenting;
 import javax.xml.bind.annotation.XmlTransient;
 
 public abstract class AbstractRootParent<C extends Child>
-        extends AbstractParent<C,VoidParent>
-        implements Parent<C, VoidParent>{
+        extends AbstractParent<C, VoidParent>
+        implements Parent<C, VoidParent> {
 
     @Override
     public VoidParent getParent() {

@@ -1,10 +1,8 @@
 package org.speedy.parenting;
 
-import java.util.*;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
-import java.util.function.UnaryOperator;
-import java.util.stream.Stream;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 public interface Parent<C extends Child, P extends Parent> extends List<C>, Child<P> {
 
@@ -29,7 +27,7 @@ public interface Parent<C extends Child, P extends Parent> extends List<C>, Chil
         Arrays.sort(a, (Comparator) comparator);
         this.clear();
         for (Object e : a) {
-           this.add((C) e);
+            this.add((C) e);
         }
     }
 }

@@ -1,6 +1,5 @@
 package org.speedy.parenting;
 
-import javax.xml.bind.annotation.XmlTransient;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
@@ -9,7 +8,7 @@ public abstract class AbstractParent<C extends Child, P extends Parent> extends 
 
     protected MArrayList<C> children = new MArrayList<C>();
 
-    public abstract AbstractParent<C,P> copy();
+    public abstract AbstractParent<C, P> copy();
 
     protected AbstractParent<C, P> shallowCopy() {
         try {
@@ -95,7 +94,7 @@ public abstract class AbstractParent<C extends Child, P extends Parent> extends 
 
     public boolean removeAll(Collection<?> collection) {
         List<Child> removeableList = new ArrayList<Child>();
-        for(Object child:collection){
+        for (Object child : collection) {
             if (child instanceof Child) {
                 removeableList.add((Child) child);
             }

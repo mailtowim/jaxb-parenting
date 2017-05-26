@@ -2,7 +2,7 @@ package org.speedy.parenting;
 
 import javax.xml.bind.annotation.XmlTransient;
 
-public abstract class AbstractChild<P extends Parent> implements Child<P>{
+public abstract class AbstractChild<P extends Parent> implements Child<P> {
 
     protected P parent;
 

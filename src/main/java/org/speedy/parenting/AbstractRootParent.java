@@ -18,6 +18,9 @@ public abstract class AbstractRootParent<C extends Child>
     }
 
     @Override
+    public abstract AbstractRootParent<C> copy();
+
+    @Override
     protected AbstractRootParent<C> shallowCopy() {
         return (AbstractRootParent<C>) super.shallowCopy();
     }

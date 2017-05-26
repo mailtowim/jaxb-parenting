@@ -2,6 +2,8 @@ package org.speedy.parenting;
 
 import javax.xml.bind.annotation.XmlTransient;
 import java.util.*;
+import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 public abstract class AbstractParent<C extends Child, P extends Parent> extends AbstractChild<P> implements Parent<C, P> {
 
@@ -20,12 +22,6 @@ public abstract class AbstractParent<C extends Child, P extends Parent> extends 
             throw new RuntimeException(ex);
         } catch (IllegalAccessException ex) {
             throw new RuntimeException(ex);
-        }
-    }
-
-    public void detach() {
-        if (getParent() != null) {
-            getParent().remove(this);
         }
     }
 
@@ -180,13 +176,24 @@ public abstract class AbstractParent<C extends Child, P extends Parent> extends 
         return children.subList(fromIndex, toIndex);
     }
 
-    public void sort(Comparator<? super C> comparator) {
-        Object[] a = this.toArray();
-        Arrays.sort(a, (Comparator) comparator);
-        this.clear();
-        for (Object e : a) {
-            this.add((C) e);
-        }
+    @Override
+    public Stream<C> stream() {
+        return children.stream();
+    }
+
+    @Override
+    public Stream<C> parallelStream() {
+        return children.parallelStream();
+    }
+
+    @Override
+    public Spliterator<C> spliterator() {
+        return children.spliterator();
+    }
+
+    @Override
+    public void forEach(Consumer<? super C> action) {
+        children.forEach(action);
     }
 
     private class Itr implements Iterator<C> {

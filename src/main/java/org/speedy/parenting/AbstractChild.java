@@ -17,9 +17,4 @@ public abstract class AbstractChild<P extends Parent> implements Child<P>{
         this.parent = parent;
     }
 
-    public void detach() {
-        if (getParent() != null) {
-            getParent().remove(this);
-        }
-    }
 }

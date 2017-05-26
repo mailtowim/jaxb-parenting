@@ -1,10 +1,11 @@
 package org.speedy.parenting;
 
 import javax.xml.bind.annotation.XmlTransient;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+import java.util.function.UnaryOperator;
+import java.util.stream.Stream;
 
 public final class VoidParent implements Parent<Child<VoidParent>,VoidParent> {
 
@@ -145,6 +146,41 @@ public final class VoidParent implements Parent<Child<VoidParent>,VoidParent> {
 
     @Override
     public List<Child<VoidParent>> subList(int fromIndex, int toIndex) {
+        throw new IllegalStateException();
+    }
+
+    @Override
+    public void replaceAll(UnaryOperator<Child<VoidParent>> operator) {
+        throw new IllegalStateException();
+    }
+
+    @Override
+    public Spliterator<Child<VoidParent>> spliterator() {
+        throw new IllegalStateException();
+    }
+
+    @Override
+    public boolean removeIf(Predicate<? super Child<VoidParent>> filter) {
+        throw new IllegalStateException();
+    }
+
+    @Override
+    public Stream<Child<VoidParent>> stream() {
+        throw new IllegalStateException();
+    }
+
+    @Override
+    public Stream<Child<VoidParent>> parallelStream() {
+        throw new IllegalStateException();
+    }
+
+    @Override
+    public void forEach(Consumer<? super Child<VoidParent>> action) {
+        throw new IllegalStateException();
+    }
+
+    @Override
+    public void sort(Comparator<? super Child<VoidParent>> comparator) {
         throw new IllegalStateException();
     }
 }

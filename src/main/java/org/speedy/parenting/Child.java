@@ -8,5 +8,9 @@ public interface Child<P extends Parent> {
 
     Child<P> copy();
 
-    void detach();
+    default void detach() {
+        if (getParent() != null) {
+            getParent().remove(this);
+        }
+    }
 }

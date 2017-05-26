@@ -2,7 +2,7 @@
 Adds DOM-like support to your JAXB classes by providing default abstract classes
 
 * Version 1.0.0 should be used for java 6 and 7
-* Version 2.0.0 requires java 8, improves type inference for new java 8 functions and fixes java 8 sort function
+* Version 2.0.0 requires java 8, fixes java 8 sort function
 
 Supported collection-like functions:
 * all java list functions
